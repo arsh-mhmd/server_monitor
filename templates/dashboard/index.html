@@ -1,0 +1,399 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-primary mb-3">
+                    <center>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
+                            <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/>
+                            <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z"/>
+                            <path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/>
+                        </svg>
+                    </center>
+                    <div class="card-body">
+                        <center>
+                            <h5 class="card-title"><b>SERVER</b></h5>
+                        </center>
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active text-light" scope="row" style="text-align:left"><b>System</b></th>
+                                    <td style="text-align:left">{{system}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active text-light" scope="row" style="text-align:left"><b>Host Name</b></th>
+                                    <td style="text-align:left">{{hname}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active text-light" scope="row" style="text-align:left"><b>Processor</b></th>
+                                    <td style="text-align:left">{{Processor}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active text-light" scope="row" style="text-align:left"><b>MAC Adrress</b></th>
+                                    <td style="text-align:left">{{MAC_Address}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>System</th>
+                                <th>Host Name</th>
+                                <th>Host IP</th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>{{system}}</td>
+                            <td>{{hname}}</td>
+                            <td>{{hip}}</td>
+                        </tr>
+                        </table>
+                        <thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Processor</th>
+                                <th>Machine</th>
+                                <th>Version</th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>{{Processor}}</td>
+                            <br>
+                            <td>{{Machine}}</td>
+                            <br>
+                            <td>{{Version}}</td>
+                        </tr>
+                        </table-->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-danger mb-3">
+                    <center>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-cpu-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                            <path d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z"/>
+                        </svg>
+                    </center>
+                    <div class="card-body">
+                        <center>
+                            <h5 class="card-title"><b>CPU</b></h5>
+                        </center>
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Computer Cores </b></th>
+                                    <td style="text-align:left">{{Physical_cores}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Total Number of Threads</b></th>
+                                    <td style="text-align:left">{{Total_cores}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>CPU Usage</b></th>
+                                    <td style="text-align:left">{{Total_CPU_Usage}} %</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Turbo Current Speed(MHz)</b></th>
+                                    <td style="text-align:left">{{Current_Frequency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Computer Cores</th>
+                                <th>Total Number of Threds</th>
+                                <th>CPU Usage</th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>
+                                <center>{{Physical_cores}}</center>
+                            </td>
+                            <td>
+                                <center>{{Total_cores}}</center>
+                            </td>
+                            <td>{{Total_CPU_Usage}} %</td>
+                        </tr>
+                        </table>
+                        <thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Turbo Min.Clock Speed(MHz)</th>
+                                <br>
+                                <th>Turbo Max. Clock Speed(MHz)</th>
+                                <br>
+                                <th>Turbo Current Speed(MHz) </th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>
+                                <center>{{Min_Frequency}}</center>
+                            </td>
+                            <td>
+                                <center>{{Max_Frequency}}</center>
+                            </td>
+                            <td>{{Current_Frequency}}</td>
+                        </tr>
+                        </table-->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-warning mb-3">
+                    <center>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
+                            <path d="M2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z"/>
+                        </svg>
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <center><b>DISK</b></center>
+                        </h5>
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr style="height: 40px;">
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Total Partitions </b></th>
+                                    <td style="text-align:left">{{disk_count}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Available </b></th>
+                                    <td style="text-align:left">{{Total_disk_space|floatformat:2}} GB</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Used </b></th>
+                                    <td style="text-align:left">{{USED_DISK_SPACE|floatformat:2}} GB</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Free</b></th>
+                                    <td style="text-align:left">{{FREE_DISK_SPACE|floatformat:2}} GB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Total Partitions</th>
+                                <th>Total Available</th>
+                                <th>Total Usage</th>
+                                <th>Total Free</th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>
+                                <center>{{disk_count}}</center>
+                            </td>
+                            <td>
+                                <center>{{Total_disk_space|floatformat:2}} GB</center>
+                            </td>
+                            <td>
+                                <center>{{USED_DISK_SPACE|floatformat:2}} GB</td>
+                            <td>
+                                <center>{{FREE_DISK_SPACE|floatformat:2}} GB</td>
+                        </tr>
+                        </table-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-secondary mb-3">
+                    <center>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-sd-card-fill" viewBox="0 0 16 16">
+                            <path d="M12.5 0H5.914a1.5 1.5 0 0 0-1.06.44L2.439 2.853A1.5 1.5 0 0 0 2 3.914V14.5A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 12.5 0Zm-7 2.75a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Zm2 0a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Zm2.75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 1.5 0Zm1.25-.75a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Z"/>
+                        </svg>
+                    </center>
+                    <div class="card-body">
+                        <center>
+                            <h5 class="card-title"><b>RAM</b></h5>
+                        </center>
+                        <!--div class="progress mx-auto" data-value={{Percentage}}>
+                            <span class="progress-left">
+                                          <span class="progress-bar border-danger"></span>
+                            </span>
+                            <span class="progress-right">
+                                          <span class="progress-bar border-danger"></span>
+                            </span>
+                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">{{Percentage}} %<sup class="small"></sup></div>
+                            </div>
+                        </div-->
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr style="height: 40px;">
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Total Ram </b></th>
+                                    <td style="text-align:left">{{Total}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Available </b></th>
+                                    <td style="text-align:left">{{Available}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Used </b></th>
+                                    <td style="text-align:left">{{Used}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Percentage </b></th>
+                                    <td style="text-align:left">{{Percentage}} %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Total RAM</th>
+                                <th>Available RAM</th>
+                                <th>Used RAM</th>
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>{{Total}}</td>
+                            <td>{{Available}}</td>
+                            <td>{{Used}}</td>
+                        </tr>
+                        </table-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-success mb-3">
+                    <center>
+                        {% if LAN == True %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+                            <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+                            <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+                        </svg>{% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-wifi-off" viewBox="0 0 16 16">
+                            <path d="M10.706 3.294A12.545 12.545 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c.63 0 1.249.05 1.852.148l.854-.854zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.448 8.448 0 0 1 3.51-1.27L8 6zm2.596 1.404.785-.785c.63.24 1.227.545 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.462 8.462 0 0 0-1.98-.932zM8 10l.933-.933a6.455 6.455 0 0 1 2.013.637c.285.145.326.524.1.75l-.015.015a.532.532 0 0 1-.611.09A5.478 5.478 0 0 0 8 10zm4.905-4.905.747-.747c.59.3 1.153.645 1.685 1.03a.485.485 0 0 1 .047.737.518.518 0 0 1-.668.05 11.493 11.493 0 0 0-1.811-1.07zM9.02 11.78c.238.14.236.464.04.66l-.707.706a.5.5 0 0 1-.707 0l-.707-.707c-.195-.195-.197-.518.04-.66A1.99 1.99 0 0 1 8 11.5c.374 0 .723.102 1.021.28zm4.355-9.905a.53.53 0 0 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75l10.75-10.75z"/>
+                        </svg>{% endif %}
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <center><b>Network</b></center>
+                        </h5>
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>HOST IP</b></th>
+                                    <td style="text-align:left">{{hip}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>LAN</b></th>
+                                    <td style="text-align:left">{% if LAN == True %}
+                                        <h5 style="color:green">connected</h5> {% else %}
+                                        <h5 style="color:red">Disconnected</h5> {% endif %}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>HOST IP</th>
+                                <th>LAN</th>
+                                <th>Network Status</th>
+
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>{{hip}}</td-->
+                        <!--td>{{LAN}}</td-->
+                        <!--td>
+                                <h5>connected</h5>
+                                <h5>Disconnected</h5-->
+                        <!--h5 style="color:green">connected</h5>
+                                <h5 style="color:red">Disconnected</h5>
+                            </td>
+                            <td>{% if LAN == True %}
+                                <svg height="100" width="100" class='blinking'>
+                                    <circle cx="50" cy="50" r="15"  stroke-width="3" fill="green" />
+                                </svg> {% else %}
+                                <svg height="100" width="100" class='blinking2'>
+                                    <circle cx="50" cy="50" r="15"  stroke-width="3" fill="red" />
+                                </svg> {% endif %}
+                            </td>
+                        </tr>
+                        </table-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-hover text-dark h-100 bg-danger mb-3">
+                    <center>
+                        {% if Battery_plugged == True %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-battery-charging" viewBox="0 0 16 16">
+                            <path d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z"/>
+                            <path d="M2 4h4.332l-.94 1H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.38l-.308 1H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                            <path d="M2 6h2.45L2.908 7.639A1.5 1.5 0 0 0 3.313 10H2V6zm8.595-2-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405z"/>
+                            <path d="M12 10h-1.783l1.542-1.639c.097-.103.178-.218.241-.34V10zm0-3.354V6h-.646a1.5 1.5 0 0 1 .646.646zM16 8a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+                        </svg> {% elif Battery_percentage == 100 %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-battery-full" viewBox="0 0 16 16">
+                            <path d="M2 6h10v4H2V6z"/>
+                            <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+                        </svg>{% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="160" fill="currentColor" class="bi bi-battery" viewBox="0 0 16 16">
+                            <path d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+                        </svg>{% endif %}
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <center><b>Battery</b></center>
+                        </h5>
+
+                        <!--div class="progress mx-auto" data-value={{Battery_percentage}}>
+                            <span class="progress-left">
+                                          <span class="progress-bar border-danger"></span>
+                            </span>
+                            <span class="progress-right">
+                                          <span class="progress-bar border-danger"></span>
+                            </span>
+                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">{{Battery_percentage}} %<sup class="small"></sup></div>
+                            </div>
+                        </div-->
+                        <br>
+                        <table class="table table-borderless" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Plugged In</b></th>
+                                    <td style="text-align:left">{{Battery_plugged}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Battery Status</b></th>
+                                    <td style="text-align:left">{{Battery_level}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Percentage</b></th>
+                                    <td style="text-align:left">{{Battery_percentage}} %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--thead>
+                            <table style="width:100%;" <tr style="height: 40px;">
+                                <th>Plugged In</th>
+                                <th>Battery Status</th>
+                                <th>Percentage</th>
+
+                                </tr>
+                        </thead>
+                        <tr style="height: 40px;">
+                            <td>{{Battery_plugged}}</td>
+                            <td>{{Battery_level}}</td>
+                            <td>{{Battery_percentage}}</td>
+                        </tr>
+                        </table-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,83 @@
+{% extends 'dashboard/index.html' %} {% block content %}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-light mb-3">
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <br>
+                            <h2>Server Info</h2>
+                            <br>
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>System</b></th>
+                                    <td>{{system}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Host Name</b></th>
+                                    <td>{{Node_Name}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Release</b></th>
+                                    <td>{{Release}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Version</b></th>
+                                    <td>{{Version}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Machine</b></th>
+                                    <td>{{Machine}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Processor</b></th>
+                                    <td>{{Processor}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>MAC Address</b></th>
+                                    <td>{{MAC_Address}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-success mb-3">
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <br>
+                            <h2>Reboot and Statistics About CPU</h2>
+                            <br>
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Reboot Date</b></th>
+                                    <td>{{bt}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>CTX Switches</b></th>
+                                    <td>{{ctx}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>CPU Interrupts</b></th>
+                                    <td>{{interrupts}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>CPU System Calls</b></th>
+                                    <td>{{syscalls}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <center>
+            <a href={% url 'dashboard:index' %} class="btn btn-primary">Back</a>
+        </center>
+    </div>
+</div>
+{% endblock %}

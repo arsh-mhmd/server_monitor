@@ -1,0 +1,35 @@
+{% extends 'dashboard/index.html' %} {% load static %} {% block content %}
+<div class="page-breadcrumb">
+    <div class="row">
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card text-center">
+            <div class="card-header1">
+                <h2>CPU Each Core Details</h2>
+            </div>
+            <div class="card-body">
+                <p><b>Total CPU Usage : </b>{{Total_CPU_Usage}} %</p>
+                {% for percent in cpu_usage%}
+                <p><b>Core Percentage</b> = {{percent}} %</p>
+                <div class="progress mx-auto" data-value={{percent}}>
+                    <span class="progress-left">
+                        <span class="progress-bar border-danger"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar border-danger"></span>
+                    </span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">{{percent}} %<sup class="small"></sup></div>
+                    </div>
+                </div>
+                {% endfor %}
+                <br>
+                <a href={% url 'dashboard:index' %} class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

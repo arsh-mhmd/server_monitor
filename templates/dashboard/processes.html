@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load i18n %} {% load static %} {% block extra_css %}
+<style xmlns="http://www.w3.org/1999/html">
+
+</style>
+{% endblock %} {% block page_title %} Chart {% endblock %} {% block content %}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title text-center">PROCESSESS DETAILS</h4>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-borderless card-header1" id="tableID">
+                        <tbody>
+                            <tr>
+                                <td class="table-dark" scope="row" style="text-align:center"><b>Name</b></td>
+                                {% for name in name_list %}
+                                <td class="table-dark" scope="row" style="text-align:left">{{name}}</td>
+                                {%endfor%}
+                            </tr>
+                            <tr>
+                                <td class="text-dark" style="text-align:center"><b>CPU</b></td>
+                                {% for cpu in cpu_list %}
+                                <td>{{cpu}}</td>
+                                {%endfor%}
+                            </tr>
+                            <tr>
+                                <td class="text-dark" style="text-align:center"><b>MEMORY</b></td>
+                                {% for mem in mem_list %}
+                                <td>{{mem}}</td>
+                                {%endfor%}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

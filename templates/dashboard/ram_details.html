@@ -1,0 +1,94 @@
+{% extends 'dashboard/index.html' %} {% block content %}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-light mb-3">
+                    <div class="card-body">
+                        <br>
+                        <h2>RAM Details</h2>
+                        <div class="progress mx-auto" data-value={{Percentage}}>
+                            <span class="progress-left">
+                                        <span class="progress-bar border-danger"></span>
+                            </span>
+                            <span class="progress-right">
+                                        <span class="progress-bar border-danger"></span>
+                            </span>
+                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">{{Percentage}} %<sup class="small"></sup></div>
+                            </div>
+                        </div>
+                        <br>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Total Memory</b></th>
+                                    <td>{{Total}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Available Memory</b></th>
+                                    <td>{{Available}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Used Memory</b></th>
+                                    <td>{{Used}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Percentage</b></th>
+                                    <td>{{Percentage}} %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-success mb-3">
+                    <div class="card-body">
+                        <br>
+                        <h2>SWAP RAM Details</h2>
+                        <div class="progress mx-auto" data-value={{Percentage_swap}}>
+                            <span class="progress-left">
+                                <span class="progress-bar border-danger"></span>
+                            </span>
+                            <span class="progress-right">
+                                <span class="progress-bar border-danger"></span>
+                            </span>
+                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">{{Percentage_swap}} %<sup class="small"></sup></div>
+                            </div>
+                        </div>
+                        <br>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Total SWAP Memory</b></th>
+                                    <td>{{Total_swap}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Available SWAP Memory</b></th>
+                                    <td>{{Free_swap}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>Used SWAP Memory</b></th>
+                                    <td>{{Used_swap}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active" scope="row" style="text-align:left"><b>SWAP Memory Percentage</b></th>
+                                    <td>{{Percentage_swap}} %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <center>
+            <a href={% url 'dashboard:index' %} class="btn btn-primary">Back</a>
+        </center>
+    </div>
+</div>
+
+{% endblock %}

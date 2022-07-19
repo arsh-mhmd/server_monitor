@@ -1,0 +1,15 @@
+{% extends 'dashboard/index.html' %} {% block content %}
+<div class="card text-center">
+    <div class="card-header1">
+        <h2>Network Details</h2>
+    </div>
+    <div class="card-body">
+
+        <a href={% url 'dashboard:index' %} class="btn btn-primary">Back</a>
+    </div>
+    <div class="card-footer text-muted">
+        1 min ago
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'dashboard/index.html' %} {% block content %}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-light mb-3">
+                    <div class="card-body">
+                        <br>
+                        <h2>Disk Chart</h2>
+                        <br>
+                        <table class="table table-borderless">
+                            {% for percent in disk_storage_percent %}
+                            <td>
+                                <div class="progress mx-auto" data-value={{percent}}>
+                                    <span class="progress-left">
+                                    <span class="progress-bar border-danger"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                    <span class="progress-bar border-danger"></span>
+                                    </span>
+                                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                        <div class="h2 font-weight-bold">{{percent}} %<sup class="small"></sup>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            {%endfor%}
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-hover text-dark text-center h-100 bg-light mb-3">
+                    <div class="card-body">
+                        <br>
+                        <h2>Disk Details</h2>
+                        <br>
+                        <table class="table table-borderless card-header1">
+                            <tbody>
+                                <tr>
+                                    <th class="table-dark" scope="row" style="text-align:left"><b>DRIVE</b></th>
+                                    {% for dis in disk %}
+                                    <th class="table-dark" scope="row" style="text-align:left">{{dis}}</th>
+                                    {%endfor%}
+                                </tr>
+                                <tr>
+                                    <th class="text-dark" style="text-align:left"><b>Total</b></th>
+                                    {% for total in disk_total_storage %}
+                                    <td>{{total}}</td>
+                                    {%endfor%}
+                                </tr>
+                                <tr>
+                                    <th class="text-dark" style="text-align:left"><b>FREE</b></th>
+                                    {% for free in disk_free_storage %}
+                                    <td>{{free}}</td>
+                                    {%endfor%}
+                                </tr>
+                                <tr>
+                                    <th class="text-dark" style="text-align:left"><b>USED</b></th>
+                                    {% for used in disk_used_storage %}
+                                    <td>{{used}}</td>
+                                    {%endfor%}
+                                </tr>
+                                <tr>
+                                    <th class="text-dark" style="text-align:left"><b>Percentage</b></th>
+                                    {% for percent in disk_storage_percent %}
+                                    <td>{{percent}}</td>
+                                    {%endfor%}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <center>
+            <a href={% url 'dashboard:index' %} class="btn btn-primary">Back</a>
+        </center>
+    </div>
+</div>
+
+
+{% endblock %}

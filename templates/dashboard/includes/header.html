@@ -1,0 +1,81 @@
+{% load static %}
+
+<header class="topbar" data-navbarbg="skin5">
+    <nav class="navbar fixed-top top-navbar navbar-expand-md navbar-dark">
+        <div class="navbar-header" data-logobg="skin5">
+            <!-- This is for the sidebar toggle which is visible on mobile only -->
+            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <a class="navbar-brand" href={% url 'dashboard:index' %}>
+                <!-- Logo icon -->
+                <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="{% static 'images/Boston_Icon.png' %}" alt="homepage" class="light-logo" style="width:40px;height:45px;"/>
+                           
+                        </b>
+
+                <span class="logo-text">
+                             <!-- dark Logo text -->
+                             <!--img src="{% static 'images/logo-text.png' %}" alt="homepage" class="light-logo" /-->
+                             <img src="data:image/png;base64,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"
+                    style="width:160px;height:45px;">
+                            
+                        </span>
+                <!-- Logo icon -->
+                <!-- <b class="logo-icon"> -->
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <!-- <img src="{% static 'images/logo-text.png' %}" alt="homepage" class="light-logo" /> -->
+
+                <!-- </b> -->
+                <!--End Logo icon -->
+            </a>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Toggle which is visible on mobile only -->
+            <!-- ============================================================== -->
+            <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav float-left mr-auto">
+                <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                <!-- ============================================================== -->
+                <!-- create new -->
+                <!-- ============================================================== -->
+                <!--ul class="navbar-nav mr-auto"-->
+                <li class="nav-item">
+                    <a class="nav-link" href={% url 'dashboard:index' %}>HOME</a>
+                </li>
+                <li class="nav-item">
+                    <!--<div class="form-inline my-2 my-lg-0">-->
+                    <a class="nav-link" href="https://www.bostonindia.in/">CONTACT US</a>
+                    <!--/div-->
+                </li>
+                <!--/ul-->
+
+
+                <!--li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-none d-md-block"> ABOUT US <i class="fa fa-angle-down"></i></span>
+                        <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href={% url 'dashboard:index' %}>HOME</a>
+                        <a class="dropdown-item" href="https://www.bostonindia.in/">CONTACT US</a>
+                    </div>
+                </li-->
+            </ul>
+        </div>
+    </nav>
+</header>
